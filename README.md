@@ -9,8 +9,18 @@ A [Claude Code](https://claude.ai/code) skill that acts as a general-purpose Ope
 
 ## Installation
 
+### Via skills.sh
+
 ```bash
 npx skills add liatrio-labs/otel-instrumentation-skill
+```
+
+### From a local clone
+
+```bash
+git clone https://github.com/liatrio-labs/otel-instrumentation-skill.git
+cd otel-instrumentation-skill
+node scripts/install.js
 ```
 
 Then restart Claude Code. The skill is immediately available as `/otel-instrumentation` in any session.
