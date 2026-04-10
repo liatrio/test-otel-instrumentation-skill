@@ -5,12 +5,12 @@ A [Claude Code](https://claude.ai/code) skill that acts as a general-purpose Ope
 ## Requirements
 
 - [Claude Code](https://claude.ai/code) CLI or desktop app
-- Node.js 18+
+- Node.js 18+ (for `npx`)
 
 ## Installation
 
 ```bash
-npm install -g @liatrio-labs/otel-instrumentation-skill
+npx skills add liatrio-labs/otel-instrumentation-skill
 ```
 
 Then restart Claude Code. The skill is immediately available as `/otel-instrumentation` in any session.
