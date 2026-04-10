@@ -76,7 +76,7 @@ Write the instruction body section in `SKILL.md` that guides Claude through the 
 
 ---
 
-### [ ] 4.0 Implement Research & Documentation Workflow (Unit 2)
+### [x] 4.0 Implement Research & Documentation Workflow (Unit 2)
 
 Write the instruction body section in `SKILL.md` that guides Claude through the "research" mode: detect the target language, look up the docs URL in `language-registry.md`, call `WebFetch` (with `WebSearch` fallback), include the SDK version, and cite the source URL.
 
@@ -91,7 +91,7 @@ Write the instruction body section in `SKILL.md` that guides Claude through the 
 
 ---
 
-### [ ] 5.0 Implement Instrumentation Scoring Workflow (Unit 3)
+### [x] 5.0 Implement Instrumentation Scoring Workflow (Unit 3)
 
 Write the instruction body section in `SKILL.md` that guides Claude through the "score" mode: evaluate submitted code against the rules in `instrumentation-score.md`, produce an overall score with per-category breakdown, list findings as rule-violated → current code → suggested fix, and prioritize by impact.
 
