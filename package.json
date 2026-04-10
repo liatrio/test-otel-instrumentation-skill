@@ -3,7 +3,8 @@
   "version": "0.0.0-development",
   "description": "Claude Code skill for OpenTelemetry instrumentation — instrument code, look up SDK docs, and score instrumentation quality.",
   "scripts": {
-    "postinstall": "node scripts/install.js"
+    "postinstall": "node scripts/install.js",
+    "preuninstall": "node scripts/uninstall.js"
   },
   "files": [
     "SKILL.md",
