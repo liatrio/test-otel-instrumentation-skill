@@ -39,7 +39,7 @@ Create the skill's entry point and directory layout so it is loadable by Claude 
 
 ---
 
-### [ ] 2.0 Author Reference Documents
+### [x] 2.0 Author Reference Documents
 
 Write the four static reference documents that the skill's instruction body will cite during all three workflows. Content is sourced from upstream OTel specification repositories fetched live.
 
@@ -70,9 +70,9 @@ Write the instruction body section in `SKILL.md` that guides Claude through the 
 
 #### 3.0 Tasks
 
-- [ ] 3.1 Replace the placeholder instruction body in `SKILL.md` with a "Mode Detection" section that describes how to infer the user's intent: if the user pastes raw application code with no OTel present → instrument mode; if the user asks a question or requests examples → research mode; if the user pastes code that already contains OTel spans/metrics/logs → score mode; if the intent is ambiguous, ask one clarifying question before proceeding
-- [ ] 3.2 Add an "Instrument Mode" section to `SKILL.md` with these ordered steps: (1) identify the programming language from the code snippet, (2) look up the correct SDK and instrumentation library in `references/language-registry.md`, (3) identify all instrumentable operations in the code (HTTP handlers, DB calls, outbound requests, background jobs), (4) wrap each operation in a span using naming conventions from `references/signal-patterns.md`, (5) add span attributes using exact key names from `references/semantic-conventions.md`, (6) add error recording following the error pattern in `references/signal-patterns.md`, (7) prepend SDK initialization boilerplate with all required imports and package install commands
-- [ ] 3.3 Add an "Instrument Mode Output Format" section to `SKILL.md` that specifies: output a single fenced code block with the language tag, include inline comments on every new OTel line explaining the decision (e.g., `// otelhttp wraps the handler to create a server span automatically`), list required packages in a separate fenced block before the code, and keep all original business logic unchanged
+- [x] 3.1 Replace the placeholder instruction body in `SKILL.md` with a "Mode Detection" section that describes how to infer the user's intent: if the user pastes raw application code with no OTel present → instrument mode; if the user asks a question or requests examples → research mode; if the user pastes code that already contains OTel spans/metrics/logs → score mode; if the intent is ambiguous, ask one clarifying question before proceeding
+- [x] 3.2 Add an "Instrument Mode" section to `SKILL.md` with these ordered steps: (1) identify the programming language from the code snippet, (2) look up the correct SDK and instrumentation library in `references/language-registry.md`, (3) identify all instrumentable operations in the code (HTTP handlers, DB calls, outbound requests, background jobs), (4) wrap each operation in a span using naming conventions from `references/signal-patterns.md`, (5) add span attributes using exact key names from `references/semantic-conventions.md`, (6) add error recording following the error pattern in `references/signal-patterns.md`, (7) prepend SDK initialization boilerplate with all required imports and package install commands
+- [x] 3.3 Add an "Instrument Mode Output Format" section to `SKILL.md` that specifies: output a single fenced code block with the language tag, include inline comments on every new OTel line explaining the decision (e.g., `// otelhttp wraps the handler to create a server span automatically`), list required packages in a separate fenced block before the code, and keep all original business logic unchanged
 
 ---
 
