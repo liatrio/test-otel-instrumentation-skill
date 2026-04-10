@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/liatrio-labs/otel-instrumentation-skill/compare/v1.0.0...v1.1.0) (2026-04-10)
+
+
+### Features
+
+* add npm package, install script, and README ([143e280](https://github.com/liatrio-labs/otel-instrumentation-skill/commit/143e28001bd69bf166888865b09fcab98c030d87))
+* add uninstall script and skills.sh repo topics ([c8896af](https://github.com/liatrio-labs/otel-instrumentation-skill/commit/c8896af5f1008fb67b3ee43d6565358e73cd8f76))
+
 # 1.0.0 (2026-04-10)
 
 
