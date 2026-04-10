@@ -60,7 +60,7 @@ Write the four static reference documents that the skill's instruction body will
 
 ---
 
-### [ ] 3.0 Implement Code Instrumentation Workflow (Unit 1)
+### [x] 3.0 Implement Code Instrumentation Workflow (Unit 1)
 
 Write the instruction body section in `SKILL.md` that guides Claude through the "instrument" mode: detect language, look up the SDK in `language-registry.md`, apply spans and attributes following `semantic-conventions.md` and `signal-patterns.md`, and return runnable instrumented code.
 
@@ -86,8 +86,8 @@ Write the instruction body section in `SKILL.md` that guides Claude through the 
 
 #### 4.0 Tasks
 
-- [ ] 4.1 Add a "Research Mode" section to `SKILL.md` with these ordered steps: (1) identify the programming language from the user's question (if no language is mentioned, ask before proceeding), (2) look up the getting-started URL in `references/language-registry.md`, (3) call `WebFetch` on the URL, (4) if `WebFetch` returns no useful content or fails, fall back to `WebSearch` with the query `"opentelemetry {language} {topic} site:opentelemetry.io"`, (5) extract the SDK version referenced on the page, (6) surface the relevant section of the docs as a working code example
-- [ ] 4.2 Add a "Research Mode Output Format" section to `SKILL.md` that specifies: always open with a one-sentence direct answer to the question, follow with a complete runnable code example in a fenced block with language tag, include the exact package install command for that language's package manager, state the SDK version the example applies to, and close with the source URL as a plain markdown link — never include more than one code example unless the user asks for multiple approaches
+- [x] 4.1 Add a "Research Mode" section to `SKILL.md` with these ordered steps: (1) identify the programming language from the user's question (if no language is mentioned, ask before proceeding), (2) look up the getting-started URL in `references/language-registry.md`, (3) call `WebFetch` on the URL, (4) if `WebFetch` returns no useful content or fails, fall back to `WebSearch` with the query `"opentelemetry {language} {topic} site:opentelemetry.io"`, (5) extract the SDK version referenced on the page, (6) surface the relevant section of the docs as a working code example
+- [x] 4.2 Add a "Research Mode Output Format" section to `SKILL.md` that specifies: always open with a one-sentence direct answer to the question, follow with a complete runnable code example in a fenced block with language tag, include the exact package install command for that language's package manager, state the SDK version the example applies to, and close with the source URL as a plain markdown link — never include more than one code example unless the user asks for multiple approaches
 
 ---
 
@@ -101,5 +101,5 @@ Write the instruction body section in `SKILL.md` that guides Claude through the 
 
 #### 5.0 Tasks
 
-- [ ] 5.1 Add a "Score Mode" section to `SKILL.md` with these ordered steps: (1) identify the programming language, (2) read all rules from `references/instrumentation-score.md`, (3) evaluate the code against every applicable rule grouped by Target (Resource, Span, Metric, Log), (4) for each violated rule record: the Rule ID, the offending line(s), and a concrete fix, (5) compute a simple pass/fail score per category (e.g., "Spans: 4/6 rules passed"), (6) compute an overall score as a percentage of rules passed across all applicable categories
-- [ ] 5.2 Add a "Score Mode Output Format" section to `SKILL.md` that specifies: open with the overall score as a percentage and a one-line verdict (e.g., "62% — needs work on error handling and span naming"), follow with a per-category breakdown table (Category | Passed | Failed | Score), then list all findings sorted by Impact (Critical first) using the format: `**[RULE-ID] — [Impact]**: [description of violation]` followed by a "Current" fenced code block and a "Fix" fenced code block, and close with a prioritized "Top 3 actions to improve your score" section
+- [x] 5.1 Add a "Score Mode" section to `SKILL.md` with these ordered steps: (1) identify the programming language, (2) read all rules from `references/instrumentation-score.md`, (3) evaluate the code against every applicable rule grouped by Target (Resource, Span, Metric, Log), (4) for each violated rule record: the Rule ID, the offending line(s), and a concrete fix, (5) compute a simple pass/fail score per category (e.g., "Spans: 4/6 rules passed"), (6) compute an overall score as a percentage of rules passed across all applicable categories
+- [x] 5.2 Add a "Score Mode Output Format" section to `SKILL.md` that specifies: open with the overall score as a percentage and a one-line verdict (e.g., "62% — needs work on error handling and span naming"), follow with a per-category breakdown table (Category | Passed | Failed | Score), then list all findings sorted by Impact (Critical first) using the format: `**[RULE-ID] — [Impact]**: [description of violation]` followed by a "Current" fenced code block and a "Fix" fenced code block, and close with a prioritized "Top 3 actions to improve your score" section
