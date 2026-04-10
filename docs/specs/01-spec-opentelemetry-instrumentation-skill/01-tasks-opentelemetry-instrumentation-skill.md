@@ -22,7 +22,7 @@
 
 ## Tasks
 
-### [ ] 1.0 Bootstrap Project Structure
+### [x] 1.0 Bootstrap Project Structure
 
 Create the skill's entry point and directory layout so it is loadable by Claude Code and matches the established skill format (frontmatter + instruction body, `references/` subdirectory).
 
@@ -52,11 +52,11 @@ Write the four static reference documents that the skill's instruction body will
 
 #### 2.0 Tasks
 
-- [ ] 2.1 WebFetch `https://opentelemetry.io/docs/languages/` to get the current list of all officially supported languages, then create `references/language-registry.md` with one entry per language containing: language name, `opentelemetry.io` getting-started URL (pattern: `https://opentelemetry.io/docs/languages/{language}/getting-started/`), and the SDK GitHub repo URL (pattern: `https://github.com/open-telemetry/opentelemetry-{language}`)
-- [ ] 2.2 WebFetch the semantic conventions for HTTP (`https://opentelemetry.io/docs/specs/semconv/http/`), database (`https://opentelemetry.io/docs/specs/semconv/database/`), messaging (`https://opentelemetry.io/docs/specs/semconv/messaging/`), and RPC (`https://opentelemetry.io/docs/specs/semconv/rpc/`), then create `references/semantic-conventions.md` with one section per signal category containing the most important attribute keys, their types, and whether they are required or recommended
-- [ ] 2.3 Create `references/signal-patterns.md` covering four language-agnostic topics: (a) span naming conventions (verb + noun, low-cardinality), (b) context propagation (W3C TraceContext, Baggage), (c) error recording (set span status to Error, record exception, set `error.type`), and (d) metric instrument selection guide (Counter vs. UpDownCounter vs. Histogram vs. Gauge with when-to-use rules) — base this on the OTel specification, not language-specific SDKs
-- [ ] 2.4 WebFetch `https://raw.githubusercontent.com/instrumentation-score/spec/main/specification.md` and embed the full content as the first section of `references/instrumentation-score.md`
-- [ ] 2.5 WebFetch `https://api.github.com/repos/instrumentation-score/spec/contents/rules` to get the list of rule files; then WebFetch each individual rule file's `download_url` and append all rules to `references/instrumentation-score.md`, formatted as a table grouped by Target (Resource, Span, Metric, Log) and sorted by Impact (Critical → Important → Normal → Low), including: Rule ID, Description, Criteria, and Impact for each rule
+- [x] 2.1 WebFetch `https://opentelemetry.io/docs/languages/` to get the current list of all officially supported languages, then create `references/language-registry.md` with one entry per language containing: language name, `opentelemetry.io` getting-started URL (pattern: `https://opentelemetry.io/docs/languages/{language}/getting-started/`), and the SDK GitHub repo URL (pattern: `https://github.com/open-telemetry/opentelemetry-{language}`)
+- [x] 2.2 WebFetch the semantic conventions for HTTP (`https://opentelemetry.io/docs/specs/semconv/http/`), database (`https://opentelemetry.io/docs/specs/semconv/database/`), messaging (`https://opentelemetry.io/docs/specs/semconv/messaging/`), and RPC (`https://opentelemetry.io/docs/specs/semconv/rpc/`), then create `references/semantic-conventions.md` with one section per signal category containing the most important attribute keys, their types, and whether they are required or recommended
+- [x] 2.3 Create `references/signal-patterns.md` covering four language-agnostic topics: (a) span naming conventions (verb + noun, low-cardinality), (b) context propagation (W3C TraceContext, Baggage), (c) error recording (set span status to Error, record exception, set `error.type`), and (d) metric instrument selection guide (Counter vs. UpDownCounter vs. Histogram vs. Gauge with when-to-use rules) — base this on the OTel specification, not language-specific SDKs
+- [x] 2.4 WebFetch `https://raw.githubusercontent.com/instrumentation-score/spec/main/specification.md` and embed the full content as the first section of `references/instrumentation-score.md`
+- [x] 2.5 WebFetch `https://api.github.com/repos/instrumentation-score/spec/contents/rules` to get the list of rule files; then WebFetch each individual rule file's `download_url` and append all rules to `references/instrumentation-score.md`, formatted as a table grouped by Target (Resource, Span, Metric, Log) and sorted by Impact (Critical → Important → Normal → Low), including: Rule ID, Description, Criteria, and Impact for each rule
 
 ---
 
