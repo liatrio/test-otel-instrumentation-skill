@@ -1,0 +1,37 @@
+{
+  "name": "@liatrio-labs/otel-instrumentation-skill",
+  "version": "0.0.0-development",
+  "description": "Claude Code skill for OpenTelemetry instrumentation — instrument code, look up SDK docs, and score instrumentation quality.",
+  "scripts": {
+    "postinstall": "node scripts/install.js"
+  },
+  "files": [
+    "SKILL.md",
+    "references/",
+    "scripts/"
+  ],
+  "keywords": [
+    "claude-code",
+    "claude-skill",
+    "opentelemetry",
+    "otel",
+    "observability",
+    "instrumentation",
+    "tracing",
+    "metrics",
+    "logs"
+  ],
+  "author": "Liatrio Labs",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liatrio-labs/otel-instrumentation-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liatrio-labs/otel-instrumentation-skill/issues"
+  },
+  "homepage": "https://github.com/liatrio-labs/otel-instrumentation-skill#readme",
+  "engines": {
+    "node": ">=18"
+  }
+}
