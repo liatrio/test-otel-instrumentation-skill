@@ -1,0 +1,70 @@
+name: PR Build OCI (smoke test)
+
+on:
+  pull_request:
+    paths:
+      - SKILL.md
+      - references/**
+      - scripts/**
+      - .github/workflows/pr-build-oci.yml
+      - .github/workflows/publish-oci.yml
+
+permissions:
+  contents: read
+
+env:
+  SKILLS_OCI_VERSION: v0.0.11
+  SKILL_NAME: otel-instrumentation
+
+jobs:
+  build:
+    name: Package skill (no push)
+    runs-on: ubuntu-latest
+    services:
+      registry:
+        image: registry:2
+        ports:
+          - 5000:5000
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Go
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5.6.0
+        with:
+          go-version: 'stable'
+          cache: false
+
+      - name: Install skills-oci (go install — verified via sum.golang.org)
+        run: |
+          set -euo pipefail
+          go install "github.com/salaboy/skills-oci@${SKILLS_OCI_VERSION}"
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      - name: Stage skill content
+        id: stage
+        run: |
+          set -euo pipefail
+          STAGE="$(mktemp -d)/${SKILL_NAME}"
+          mkdir -p "$STAGE"
+          cp SKILL.md "$STAGE/"
+          [ -d references ] && cp -R references "$STAGE/"
+          [ -d scripts ] && cp -R scripts "$STAGE/"
+          echo "dir=$STAGE" >> "$GITHUB_OUTPUT"
+
+      - name: Push to local registry (smoke test)
+        run: |
+          set -euo pipefail
+          REF="localhost:5000/${SKILL_NAME}:pr-${{ github.event.pull_request.number }}"
+          skills-oci push "$REF" "${{ steps.stage.outputs.dir }}" --plain-http | tee /tmp/push.log
+          DIGEST=$(grep -oE 'sha256:[a-f0-9]{64}' /tmp/push.log | tail -n1)
+          if [ -z "$DIGEST" ]; then
+            echo "::error::skills-oci did not emit a sha256 digest on stdout"
+            exit 1
+          fi
+          {
+            echo "## OCI build smoke test"
+            echo
+            echo "- ref: \`$REF\`"
+            echo "- digest: \`$DIGEST\`"
+          } >> "$GITHUB_STEP_SUMMARY"
