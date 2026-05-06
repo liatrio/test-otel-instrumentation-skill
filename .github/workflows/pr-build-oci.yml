@@ -56,7 +56,7 @@ jobs:
         run: |
           set -euo pipefail
           REF="localhost:5000/${SKILL_NAME}:pr-${{ github.event.pull_request.number }}"
-          skills-oci push "$REF" "${{ steps.stage.outputs.dir }}" --plain-http | tee /tmp/push.log
+          skills-oci push --plain --plain-http "$REF" "${{ steps.stage.outputs.dir }}" | tee /tmp/push.log
           DIGEST=$(grep -oE 'sha256:[a-f0-9]{64}' /tmp/push.log | tail -n1)
           if [ -z "$DIGEST" ]; then
             echo "::error::skills-oci did not emit a sha256 digest on stdout"
