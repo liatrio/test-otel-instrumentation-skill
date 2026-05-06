@@ -12,14 +12,14 @@ A [Claude Code](https://claude.ai/code) skill that acts as a general-purpose Ope
 ### Via skills.sh
 
 ```bash
-npx skills add liatrio-labs/otel-instrumentation-skill
+npx skills add liatrio/test-otel-instrumentation-skill
 ```
 
 ### From a local clone
 
 ```bash
-git clone https://github.com/liatrio-labs/otel-instrumentation-skill.git
-cd otel-instrumentation-skill
+git clone https://github.com/liatrio/test-otel-instrumentation-skill.git
+cd test-otel-instrumentation-skill
 node scripts/install.js
 ```
 
